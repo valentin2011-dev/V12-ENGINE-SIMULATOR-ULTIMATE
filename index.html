@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#050505">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>V12 Engine Simulator — Ultimate</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header class="top">
+  <div><span>V12 ENGINE SIMULATOR</span><h1>V12</h1></div>
+  <div class="state"><i id="dot"></i><b id="state">STANDBY</b></div>
+</header>
+
+<section class="portrait-dashboard">
+  <div class="tach">
+    <div class="label"><span>RPM ×1000</span><span>REAL V12 AUDIO</span></div>
+    <div class="dial"><div id="ticks"></div><div id="needle"></div><div class="hub"></div>
+      <strong id="rpm">0000</strong><small>REV / MIN</small>
+    </div>
+    <div class="redline">REDLINE <b>9 500</b></div>
+  </div>
+  <div class="numbers">
+    <article><span>SPEED</span><b id="speed">000</b><em>KM/H</em></article>
+    <article><span>GEAR</span><b id="gear">N</b><em id="shift">READY</em></article>
+  </div>
+</section>
+
+<section class="telemetry">
+  <div><span>ENGINE</span><b id="engineTemp">-- °C</b></div>
+  <div><span>OIL</span><b id="oilTemp">-- °C</b></div>
+  <div><span>OIL PRESS.</span><b id="oilPressure">-- bar</b></div>
+  <div><span>POWER</span><b id="power">-- HP</b></div>
+</section>
+
+<section class="mode">
+  <header><span>DRIVE MODE</span><b id="modeName">COMFORT</b></header>
+  <div><button class="modeBtn active" data-mode="comfort">COMFORT</button><button class="modeBtn" data-mode="sport">SPORT</button><button class="modeBtn" data-mode="sportplus">SPORT+</button></div>
+</section>
+
+<section class="controls">
+  <button class="paddle" id="down">−</button>
+  <button class="start" id="start"><strong>◉</strong><span>START ENGINE</span></button>
+  <button class="paddle" id="up">+</button>
+</section>
+
+<section class="pedals">
+  <div class="pedal decel" id="decelPedal"><span>DECEL</span><b>ENGINE BRAKE</b></div>
+  <div class="pedal brake" id="brakePedal"><span>BRAKE</span><b>0%</b></div>
+  <div class="pedal throttlePedal" id="throttlePedal"><span>THROTTLE</span><b id="throttleValue">0%</b></div>
+</section>
+
+<section class="throttle"><header><span>THROTTLE INPUT</span><b id="throttleValue2">0%</b></header><input id="throttle" type="range" min="0" max="100" value="0"></section>
+
+<footer><span>6.5L • NATURALLY ASPIRATED • 9 500 RPM • REAL V12 SAMPLE</span><button id="mute">SOUND ON</button></footer>
+</main>
+
+<section class="track">
+  <div class="trackTop"><span>V12 // TRACK MODE</span><b id="trackMode">COMFORT</b></div>
+  <div class="trackGrid">
+    <div class="trackRpm"><span>RPM</span><strong id="trackRpm">0000</strong><div class="bar"><i id="rpmBar"></i></div></div>
+    <div class="trackSpeed"><strong id="trackSpeed">000</strong><span>KM/H</span></div>
+    <div class="trackGear"><span>GEAR</span><strong id="trackGear">N</strong></div>
+  </div>
+  <div class="trackPedals">
+    <button id="trackDecel"><span>DECEL</span><b>ENGINE BRAKE</b></button>
+    <button id="trackBrake"><span>BRAKE</span><b>0%</b></button>
+    <button id="trackThrottle"><span>THROTTLE</span><b>0%</b></button>
+  </div>
+  <div class="trackBottom">
+    <div><span>ENGINE</span><b id="trackTemp">--°C</b></div><div><span>OIL</span><b id="trackOil">--°C</b></div><div><span>POWER</span><b id="trackPower">-- HP</b></div>
+    <button id="trackDown">−</button><button id="trackStart">START</button><button id="trackUp">+</button>
+  </div>
+</section>
+<script src="app.js"></script>
+</body>
+</html>
